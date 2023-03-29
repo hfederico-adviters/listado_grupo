@@ -1,0 +1,21 @@
+.card-grupo{
+  width: 30%;
+  background-color: whitesmoke;
+  border-top: 0.5em solid salmon;
+  padding: 1em;
+  padding-bottom: 2.5em;
+  border-radius: 5px;
+  transition: 0.5s background;
+  transition: 0.5s color;
+
+}
+
+.card-grupo h3{
+  font-size: 2em;
+}
+
+.card-grupo:hover{
+color: whitesmoke;
+background-color: salmon;
+transform: scale(1.02);
+}
