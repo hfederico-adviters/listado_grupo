@@ -1,12 +1,12 @@
 import Layout from "../../components/Layout/layout"
 
-const Login= ()=>{
+const Home = ()=>{
     return    (   
-    <Layout titulo="Login">
+    <Layout titulo="Home">
     <div>
-      Hola este es el login
+      Hola este es el Home
     </div>
   </Layout>
   )
 }
-export default Login;
+export default Home;
