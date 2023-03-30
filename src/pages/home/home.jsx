@@ -1,23 +1,17 @@
-import { useEffect, useState } from "react";
 import Card from "../../components/Card/card";
 import Layout from "../../components/Layout/layout";
-import { fetchCustom } from "../../utils/fetchCustom";
+import { useGrupos } from "../../hook/useGrupos";
 
 const Home = () => {
-  const [grupos, setGrupos] = useState([]);
-  const token = localStorage.getItem("Token");
-  const options = {
-    headers: { Authorization: `bearer ${token}` },
-  };
-  useEffect(() => {
-    fetchCustom(
-      "/grupos",
-      (datos) => {
-        setGrupos(datos);
-      },
-      options
-    );
-  });
+  const { data, isLoading, isError } = useGrupos();
+
+  if (isLoading) {
+    return <div>Loading</div>;
+  }
+  if (!!isError) {
+    return <div>error</div>;
+  }
+  console.log(data);
   return (
     <Layout titulo="Home">
       <div
@@ -29,9 +23,8 @@ const Home = () => {
           padding: "2em",
         }}
       >
-        
-        {grupos?.map(({ id, created_at }) => (
-          <Card idGrupo={id} ultimaFechaActualizacion={created_at} />
+        {data?.map(({ id, createdAt }) => (
+          <Card idGrupo={id} ultimaFechaActualizacion={createdAt} />
         ))}
       </div>
     </Layout>

@@ -2,37 +2,20 @@ import { useContext } from "react";
 import { Field, Form } from "react-final-form";
 import Layout from "../../components/Layout/layout";
 import { AutenticacionContext } from "../../context/AutenticacionProvider";
+import { postLogin } from "../../services/loginServices";
 import { fetchCustom } from "../../utils/fetchCustom";
 
 const Login = () => {
-  const { cerrarSesion, iniciarSesion, usuario , setUsuario} =
-  useContext(AutenticacionContext);
+  const { setUsuario } = useContext(AutenticacionContext);
   return (
     <Layout titulo="Login">
       <Form
         onSubmit={({ email, password }) => {
-          const options = {
-            method: "POST",
-            body: JSON.stringify({
-              email,
-              password,
-            }),
+          let body = {
+            email,
+            password,
           };
-          fetchCustom(
-            "/login",
-            (response) => {
-              console.log(response)
-              if (response?.message){
-               alert(response?.message)
-              }
-              setUsuario(`${response?.nombre} ${response?.apellido}`)
-              localStorage.setItem(
-                "Token",
-                response?.accessToken?.stsTokenManager?.accessToken
-              );
-            },
-            options
-          );
+          postLogin(body, setUsuario);
         }}
         render={({ handleSubmit }) => (
           <div
