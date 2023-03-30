@@ -18,8 +18,9 @@ const Layout = ({ titulo, children }) => {
         style={{
           display: "flex",
           justifyContent: "center",
-          height: "100px",
-          backgroundColor: "salmon",
+          alignItems: "center",
+          height: "50px",
+          backgroundColor: "grey",
           color: "whitesmoke",
         }}
       >
@@ -30,13 +31,15 @@ const Layout = ({ titulo, children }) => {
           style={{
             display: "flex",
             justifyContent: "center",
-            height: "40px",
-            backgroundColor: "graxy",
+            height: "50px",
+            // backgroundColor: "grey",
           }}
         >
           {Navigation?.map((link) => (
             <div style={{ marginLeft: 8, marginRight: 8 }}>
-              <Link to={link?.href}>{link?.name}</Link>
+              <Link to={link?.href} style={{ color: "white" }}>
+                {link?.name}
+              </Link>
             </div>
           ))}
           <div style={{ marginLeft: 8, marginRight: 8 }}>
@@ -49,7 +52,7 @@ const Layout = ({ titulo, children }) => {
         </div>
       )}
       <div style={{ height: "100%" }}>{children}</div>
-      <div
+      {/* <div
         style={{
           display: "flex",
           justifyContent: "center",
@@ -59,7 +62,7 @@ const Layout = ({ titulo, children }) => {
         }}
       >
         <h3>Footer</h3>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,0 +1,20 @@
+.main-button {
+    background-color: #E3655B;
+    color: white;
+    font-weight: bold;
+    padding: 1.5em;
+    border-radius: 10px;
+    border: none;
+    transition: 0.3s background;
+}
+
+.main-button:hover {
+    border: 2px solid #E3655B;
+    background-color: #F3E1DD;
+    font-weight: bold;
+    color: #E3655B;
+}
+
+.main-button:active{
+    transform: scale(1.02);
+}

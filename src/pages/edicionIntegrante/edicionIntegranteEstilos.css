@@ -1,0 +1,20 @@
+.edicionIntegrante{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.edicionIntegrante label{
+display: block;
+}
+
+.edicionIntegrante textarea{
+    width: 100%;
+    font-size: 1.2em;
+}
+
+.edicionIntegrante textarea, .edicionIntegrante input {
+    border: 2px solid #E3655B;
+    border-radius: 10px;
+    padding: 1em;
+    margin-bottom: 1em;
+}
