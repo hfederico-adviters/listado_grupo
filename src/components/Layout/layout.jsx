@@ -11,6 +11,7 @@ const Layout = ({ titulo, children }) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
+        backgroundColor: "#C7D9B7",
         height: "100vh",
       }}
     >
@@ -24,7 +25,7 @@ const Layout = ({ titulo, children }) => {
           color: "whitesmoke",
         }}
       >
-        <h2>{titulo}</h2>
+        <h1>{titulo}</h1>
       </div>
       {usuario && (
         <div
@@ -32,7 +33,7 @@ const Layout = ({ titulo, children }) => {
             display: "flex",
             justifyContent: "center",
             height: "50px",
-            // backgroundColor: "grey",
+            backgroundColor: "grey",
           }}
         >
           {Navigation?.map((link) => (
@@ -51,7 +52,17 @@ const Layout = ({ titulo, children }) => {
           </div>
         </div>
       )}
-      <div style={{ height: "100%" }}>{children}</div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100%",
+          padding: "32px",
+        }}
+      >
+        {children}
+      </div>
       {/* <div
         style={{
           display: "flex",

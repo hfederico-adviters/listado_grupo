@@ -1,18 +1,19 @@
-const CardPersona = ({ img, nombre, onClick }) => {
+const CardPersona = ({ img, nombre, href }) => {
   return (
-    <div
+    <a
       style={{
         display: "flex",
         justifyContent: "space-between",
         width: "100%",
         marginTop: "16px",
         cursor: "pointer",
+        textDecoration: "none",
       }}
-      onClick={() => onClick()}
+      href={href}
     >
       <img src={img} style={{ width: "50px" }}></img>
-      <div>{nombre}</div>
-    </div>
+      <p>{nombre}</p>
+    </a>
   );
 };
 export default CardPersona;

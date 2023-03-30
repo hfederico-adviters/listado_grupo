@@ -1,11 +1,9 @@
 import Card from "../../components/Card/card";
 import Layout from "../../components/Layout/layout";
 import { useGrupos, useIntegrantes } from "../../hook/useGrupos";
-
 import ModalCustom from "../../components/ModalCustom/modalCustom";
 import CardPersona from "./components/cardPersona";
 import { useState } from "react";
-
 const Home = () => {
   const { data, isLoading, isError } = useGrupos();
   const [showModal, setShowModal] = useState({
@@ -24,7 +22,7 @@ const Home = () => {
   if (!!isError || !!isErrorIntegrantes) {
     return <div>error</div>;
   }
-  console.log(integrantes);
+
   return (
     <Layout titulo="Home">
       <div
@@ -40,7 +38,6 @@ const Home = () => {
         {data?.map(({ id, createdAt }) => (
           <Card
             idGrupo={id}
-            ultimaFechaActualizacion={createdAt}
             onClick={() => {
               setShowModal({ open: true, idGrupo: id, title: `Grupo ${id}` });
             }}
@@ -67,9 +64,7 @@ const Home = () => {
                   ? persona?.imagen
                   : "https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg"
               }
-              onClick={() => {
-                console.log(persona.id);
-              }}
+              href={`/integrantes/${showModal.idGrupo}/${persona?.id}`}
             />
           ))}
       </ModalCustom>
