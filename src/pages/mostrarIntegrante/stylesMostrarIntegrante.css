@@ -1,0 +1,27 @@
+.mostrarIntegrante {
+    display: flex;
+    justify-content: center;
+}
+
+.mostrarIntegrante section:first-child {
+    width: 40%;
+}
+
+.mostrarIntegrante section:last-child {
+    padding: 2em;
+}
+
+.mostrarIntegrante h3 {
+    font-size: 3em;
+    margin-bottom: 0;
+}
+
+.mostrarIntegrante p {
+    color: gray;
+    font-style: italic;
+}
+
+.mostrarIntegrante img {
+ width: 100%;
+ border-radius: 10px;
+}

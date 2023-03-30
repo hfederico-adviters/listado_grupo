@@ -1,12 +1,13 @@
-import "./styleCard.css"
+import "./styleCard.css";
 
-const Card = ({idGrupo, ultimaFechaActualizacion}) => {
-    return (
-        <div className="card-grupo">
-            <h3>Grupo {idGrupo}</h3>
-            <p>Ultima fecha actualización: {ultimaFechaActualizacion}</p>
-        </div>
-    )
-}
+const Card = ({ idGrupo, onClick }) => {
+  return (
+    <button onClick={() => onClick()} className="card-grupo">
+      <div>
+        <h3>Grupo {idGrupo}</h3>
+      </div>
+    </button>
+  );
+};
 
 export default Card;
